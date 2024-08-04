@@ -25,6 +25,8 @@
 
 */
 
+#include "ReShade.fxh"
+
 uniform float internal_res <
     ui_type = "drag";
     ui_min = 1.0;
@@ -1025,9 +1027,7 @@ uniform float post_br <
     ui_label = "Post Brightness";
 > = 1.0;
 
-#include "ReShade.fxh"
-
-#define TexSize float2(Resolution_X, Resolution_Y)
+#define TexSize (1.0 / NormalizedNativePixelSize)
 #define IptSize float2(800.00000000, 600.00000000)
 #define OptSize float4(BUFFER_SCREEN_SIZE, 1.0 / BUFFER_SCREEN_SIZE)
 #define OrgSize float4(TexSize, 1.0 / TexSize)
@@ -1052,12 +1052,47 @@ uniform float post_br <
 #define invsigmav \
         1.0 / (2.0 * SIGMA_VER * SIGMA_VER * internal_res * internal_res)
 
+
+uniform float  FrameCount     < source = "framecount"; >;
+
+uniform float  NativeWidth    < source = "nativewidth"; >;
+uniform float  NativeHeight   < source = "nativeheight"; >;
+uniform float  InternalWidth  < source = "internalwidth"; >;
+uniform float  InternalHeight < source = "internalheight"; >;
+uniform float  BufferWidth    < source = "bufferwidth"; >;
+uniform float  BufferHeight   < source = "bufferheight"; >;
+
+uniform float  ViewportX      < source = "viewportx"; >;
+uniform float  ViewportY      < source = "viewporty"; >;
+uniform float2 ViewportOffset < source = "viewportoffset"; >;
+uniform float  ViewportWidth  < source = "viewportwidth"; >;
+uniform float  ViewportHeight < source = "viewportheight"; >;
+uniform float2 ViewportSize   < source = "viewportsize"; >;
+
+// InternalSize / NativeSize
+uniform float  UpscaleMultiplier < source = "upscale_multiplier"; >;
+
+// ViewportSize / InternalSize
+uniform float2 InternalPixelSize < source = "internal_pixel_size"; >;
+
+// ViewportSize / InternalSize / BufferSize
+uniform float2 NormalizedInternalPixelSize < source = "normalized_internal_pixel_size"; >;
+
+// ViewportSize / NativeSize
+uniform float2 NativePixelSize < source = "native_pixel_size"; >;
+
+// ViewportSize / NativeSize / BufferSize
+uniform float2 NormalizedNativePixelSize < source = "normalized_native_pixel_size"; >;
+
+// BufferSize / ViewportSize
+uniform float2 BufferToViewportRatio < source = "buffer_to_viewport_ratio"; >;
+
 #ifndef Resolution_X
-#define Resolution_X 320
+#define Resolution_X BUFFER_WIDTH
 #endif
 
 #ifndef Resolution_Y
-#define Resolution_Y 240
+#define Resolution_Y BUFFER_HEIGHT
 #endif
 
 #define CRTHD_S0 ReShade::BackBuffer
@@ -1259,8 +1294,6 @@ sampler CRTHD_L4
     Texture = CRTHD_04;
 };
 
-uniform int framecount < source = "framecount";
-> ;
 
 float3 fix_lut(float3 lut, float3 ref)
 {
@@ -1275,7 +1308,7 @@ float3 fix_lut(float3 lut, float3 ref)
 
 float vignette(float2 pos)
 {
-    float2 b = vigdef * float2(1.0, OrgSize.x / OrgSize.y) * 0.125;
+    float2 b = vigdef * float2(1.0, ViewportWidth / ViewportHeight) * 0.125;
 
     pos = clamp(pos, 0.0, 1.0);
     pos = abs(2.0 * (pos - 0.5));
@@ -1681,7 +1714,7 @@ float humbars(float pos)
         return 1.0;
     } else {
         pos = (barintensity >= 0.0) ? pos : (1.0 - pos);
-        pos = frac(pos + mod(float(framecount), barspeed) / (barspeed - 1.0));
+        pos = frac(pos + mod(FrameCount, barspeed) / (barspeed - 1.0));
         pos = (barintensity < 0.0) ? pos : (1.0 - pos);
         return (1.0 - barintensity) + barintensity * pos;
     }
@@ -1689,13 +1722,14 @@ float humbars(float pos)
 
 float corner(float2 pos)
 {
-    float2 bc = bsize * float2(1.0, OptSize.x / OptSize.y) * 0.05;
+    float vp_ratio = ViewportWidth / ViewportHeight;
+    float2 bc = bsize * float2(1.0, vp_ratio) * 0.05;
 
     pos = clamp(pos, 0.0, 1.0);
     pos = abs(2.0 * (pos - 0.5));
 
     float csz = lerp(400.0, 7.0, pow(4.0 * csize, 0.10));
-    float crn = dot(pow(pos, csz.xx * float2(1.0, OptSize.y / OptSize.x)), 1.0.xx);
+    float crn = dot(pow(pos, csz.xx * float2(1.0, 1.0 / vp_ratio)), 1.0.xx);
 
     crn = (csize == 0.0) ? max(pos.x, pos.y) : pow(crn, 1.0 / csz);
     pos = max(pos, crn);
@@ -2054,13 +2088,13 @@ float4 LinearizePS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
     bool hscans = (hiscan > 0.5);
 
-    if (interr <= OrgSize.y / yres_div && interm > 0.5 && intres != 1.0 &&
+    if (interr <= NativeHeight / yres_div && interm > 0.5 && intres != 1.0 &&
         intres != 0.5 && vga_mode < 0.5 || hscans) {
 
         intera = 0.25;
 
         float liine_no = clamp(floor(mod(OrgSize.y * fuxcoord.y, 2.0)), 0.0, 1.0);
-        float frame_no = clamp(floor(mod(float(framecount), 2.0)), 0.0, 1.0);
+        float frame_no = clamp(floor(mod(FrameCount, 2.0)), 0.0, 1.0);
         float ii       = abs(liine_no - frame_no);
 
         if (interm < 3.5) {
@@ -2365,9 +2399,8 @@ float4 HD_Pass2_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
         }
     }
 
-    lexcoord = overscan(lexcoord,
-                        (OrgSize.x - overscanx) / OrgSize.x,
-                        (OrgSize.y - overscany) / OrgSize.y);
+    lexcoord = overscan(lexcoord, (OrgSize.x - overscanx * BufferToViewportRatio.x) / OrgSize.x,
+                                  (OrgSize.y - overscany * BufferToViewportRatio.y) / OrgSize.y);
 
     float2 pos    = warp(lexcoord);
     float coffset = 0.5;
@@ -2534,9 +2567,8 @@ float4 ChromaticPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
         }
     }
 
-    lexcoord = overscan(lexcoord,
-                        (OrgSize.x - overscanx) / OrgSize.x,
-                        (OrgSize.y - overscany) / OrgSize.y);
+    lexcoord = overscan(lexcoord, (OrgSize.x - overscanx * BufferToViewportRatio.x) / OrgSize.x,
+                                  (OrgSize.y - overscany * BufferToViewportRatio.y) / OrgSize.y);
 
     float2 pos0 = warp(fuxcoord.xy);
     float2 pos1 = fuxcoord.xy;
@@ -2714,11 +2746,11 @@ float4 ChromaticPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
     float3 Ref = COMPAT_TEXTURE(CRTHD_S3, pos).rgb;
     float maxb = COMPAT_TEXTURE(CRTHD_S8, pos).a;
+
     float vig  = COMPAT_TEXTURE(CRTHD_S2,
-                               clamp(pos,
-                                     0.0 + 0.5 * OrgSize.zw,
-                                     1.0 - 0.5 * OrgSize.zw))
-                    .a;
+                                clamp((pos - 0.5) * BufferToViewportRatio + 0.5,
+                                      0.0 + 0.5 * OrgSize.zw,
+                                      1.0 - 0.5 * OrgSize.zw)).a;
 
     float3 bcmask = lerp(one, cmask, b_mask);
     float3 hcmask = lerp(one, cmask, h_mask);
@@ -2838,7 +2870,7 @@ float4 ChromaticPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
     if (abs(addnoised) > 0.01) {
         float3 noise0 = noise(float3(floor(OptSize.xy * fuxcoord / noiseresd),
-                                     float(framecount)));
+                                     FrameCount));
 
         if (noisetype < 0.5) {
             color = lerp(color, noise0, 0.25 * abs(addnoised) * rc);
@@ -2854,7 +2886,7 @@ float4 ChromaticPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
                                  min(20.0 * colmx, 1.0));
 
     return float4(color * vig * humbars(lerp(pos.y, pos.x, bardir)) * post_br *
-                      corner(pos0),
+                          corner((pos0 - 0.5) * BufferToViewportRatio + 0.5),
                   1.0);
 }
 
