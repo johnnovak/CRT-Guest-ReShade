@@ -1520,299 +1520,308 @@ uniform float2 BufferToViewportRatio < source = "buffer_to_viewport_ratio"; >;
 
 #define NTSC_S00     ReShade::BackBuffer
 
+
 texture NTSC_T01
 {
-        Width  = 1.0 * Resolution_X;
-        Height = Resolution_Y;
-        Format = RGBA32F;
+    Width  = 1.0 * Resolution_X;
+    Height = Resolution_Y;
+    Format = RGBA32F;
 };
 sampler NTSC_S01
 {
-        Texture   = NTSC_T01;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = POINT;
-        MinFilter = POINT;
-        MipFilter = POINT;
+    Texture   = NTSC_T01;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = POINT;
+    MinFilter = POINT;
+    MipFilter = POINT;
 };
 
 texture NTSC_T02
 {
-        Width  = 1.0 * Resolution_X;
-        Height = Resolution_Y;
-        Format = RGBA16F;
+    Width  = 1.0 * Resolution_X;
+    Height = Resolution_Y;
+    Format = RGBA16F;
 };
 sampler NTSC_S02
 {
-        Texture   = NTSC_T02;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = POINT;
-        MinFilter = POINT;
-        MipFilter = POINT;
+    Texture   = NTSC_T02;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = POINT;
+    MinFilter = POINT;
+    MipFilter = POINT;
 };
 
 texture NTSC_T03
 {
-        Width  = 4.0 * Resolution_X;
-        Height = Resolution_Y;
-        Format = RGBA16F;
+    Width  = 4.0 * Resolution_X;
+    Height = Resolution_Y;
+    Format = RGBA16F;
 };
 sampler NTSC_S03
 {
-        Texture   = NTSC_T03;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T03;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T04
 {
-        Width  = 2.0 * Resolution_X;
-        Height = Resolution_Y;
-        Format = RGBA16F;
+    Width  = 2.0 * Resolution_X;
+    Height = Resolution_Y;
+    Format = RGBA16F;
 };
 sampler NTSC_S04
 {
-        Texture   = NTSC_T04;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T04;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T05
 {
-        Width  = 2.0 * Resolution_X;
-        Height = Resolution_Y;
-        Format = RGBA16F;
+    Width  = 2.0 * Resolution_X;
+    Height = Resolution_Y;
+    Format = RGBA16F;
 };
 sampler NTSC_S05
 {
-        Texture   = NTSC_T05;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T05;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T06
 {
-        Width  = 2.0 * Resolution_X;
-        Height = Resolution_Y;
-        Format = RGBA16F;
+    Width  = 2.0 * Resolution_X;
+    Height = Resolution_Y;
+    Format = RGBA16F;
 };
 sampler NTSC_S06
 {
-        Texture   = NTSC_T06;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T06;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T07
 {
-        Width  = 2.0 * Resolution_X;
-        Height = Resolution_Y;
-        Format = RGBA16F;
+    Width  = 2.0 * Resolution_X;
+    Height = Resolution_Y;
+    Format = RGBA16F;
 };
 sampler NTSC_S07
 {
-        Texture   = NTSC_T07;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T07;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T08
 {
-        Width  = 2.0 * Resolution_X;
-        Height = Resolution_Y;
-        Format = RGBA16F;
+    Width  = 2.0 * Resolution_X;
+    Height = Resolution_Y;
+    Format = RGBA16F;
 };
 sampler NTSC_S08
 {
-        Texture   = NTSC_T08;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T08;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T09
 {
-        Width  = 1.0 * BUFFER_WIDTH;
-        Height = Resolution_Y;
-        Format = RGBA16F;
+    Width  = 1.0 * BUFFER_WIDTH;
+    Height = Resolution_Y;
+    Format = RGBA16F;
 };
 sampler NTSC_S09
 {
-        Texture   = NTSC_T09;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T09;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T10
 {
-        Width  = 1.0 * 800.00000000;
-        Height = 600.00000000;
-        Format = RGBA16F;
+    Width  = 1.0 * 800.00000000;
+    Height = 600.00000000;
+    Format = RGBA16F;
 };
 sampler NTSC_S10
 {
-        Texture   = NTSC_T10;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T10;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T11
 {
-        Width  = 1.0 * 800.00000000;
-        Height = 600.00000000;
-        Format = RGBA16F;
+    Width  = 1.0 * 800.00000000;
+    Height = 600.00000000;
+    Format = RGBA16F;
 };
 sampler NTSC_S11
 {
-        Texture   = NTSC_T11;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T11;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T12
 {
-        Width  = 1.0 * 800.00000000;
-        Height = 600.00000000;
-        Format = RGBA16F;
+    Width  = 1.0 * 800.00000000;
+    Height = 600.00000000;
+    Format = RGBA16F;
 };
 sampler NTSC_S12
 {
-        Texture   = NTSC_T12;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T12;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T13
 {
-        Width  = 1.0 * 800.00000000;
-        Height = 600.00000000;
-        Format = RGBA16F;
+    Width  = 1.0 * 800.00000000;
+    Height = 600.00000000;
+    Format = RGBA16F;
 };
 sampler NTSC_S13
 {
-        Texture   = NTSC_T13;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T13;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
 
 texture NTSC_T14
 {
-        Width  = 1.0 * BUFFER_WIDTH;
-        Height = BUFFER_HEIGHT;
-        Format = RGBA16F;
+    Width  = 1.0 * BUFFER_WIDTH;
+    Height = BUFFER_HEIGHT;
+    Format = RGBA16F;
 };
 sampler NTSC_S14
 {
-        Texture   = NTSC_T14;
-        AddressU  = BORDER;
-        AddressV  = BORDER;
-        AddressW  = BORDER;
-        MagFilter = LINEAR;
-        MinFilter = LINEAR;
-        MipFilter = LINEAR;
+    Texture   = NTSC_T14;
+    AddressU  = BORDER;
+    AddressV  = BORDER;
+    AddressW  = BORDER;
+    MagFilter = LINEAR;
+    MinFilter = LINEAR;
+    MipFilter = LINEAR;
 };
+
 
 texture NTSC_001 < source = "CRT-LUT-1.png"; >
 {
-        Width  = 1024;
-        Height = 32;
+    Width  = 1024;
+    Height = 32;
 };
 sampler NTSC_L01
 {
-        Texture = NTSC_001;
+    Texture = NTSC_001;
 };
 
 texture NTSC_002 < source = "CRT-LUT-2.png"; >
 {
-        Width  = 1024;
-        Height = 32;
+    Width  = 1024;
+    Height = 32;
 };
 sampler NTSC_L02
 {
-        Texture = NTSC_002;
+    Texture = NTSC_002;
 };
 
-texture NTSC_003 < source = "CRT-LUT-3.png"; > {
-        Width  = 1024;
-        Height = 32;
+texture NTSC_003 < source = "CRT-LUT-3.png"; >
+{
+    Width  = 1024;
+    Height = 32;
 };
 sampler NTSC_L03
 {
-        Texture = NTSC_003;
+    Texture = NTSC_003;
 };
 
 texture NTSC_004 < source = "CRT-LUT-4.png"; >
 {
-        Width  = 1024;
-        Height = 32;
+    Width  = 1024;
+    Height = 32;
 };
 sampler NTSC_L04
 {
-        Texture = NTSC_004;
+    Texture = NTSC_004;
 };
+
 
 float3 fix_lut(float3 lut, float3 ref)
 {
     float r = length(ref);
     float l = length(lut);
     float m = max(max(ref.r, ref.g), ref.b);
-    ref     = normalize(lut + 0.0000001) * lerp(r, l, pow(m, 1.25));
+
+    ref = normalize(lut + 0.0000001) * lerp(r, l, pow(m, 1.25));
+
     return lerp(lut, ref, LUTBR);
 }
 
 float vignette(float2 pos)
 {
     float2 b = vigdef * float2(1.0, ViewportWidth / ViewportHeight) * 0.125;
+
     pos = clamp(pos, 0.0, 1.0);
     pos = abs(2.0 * (pos - 0.5));
+
     float2 res = lerp(0.0.xx, 1.0.xx, smoothstep(1.0.xx, 1.0.xx - b, sqrt(pos)));
     res = pow(res, 0.70.xx);
+
     return max(lerp(1.0, sqrt(res.x * res.y), vigstr), 0.0);
 }
 
@@ -1837,10 +1846,15 @@ float3 plant(float3 tar, float r)
 
 float3 fetch_pixel(float2 coord)
 {
-    float2 dx = float2(NTSC_02.z, 0.0) * downsample_levelx * ViewportWidth  / NativeWidth;
-    float2 dy = float2(0.0, NTSC_02.w) * downsample_levely * ViewportHeight / NativeHeight;
+    float2 dx = float2(NTSC_02.z, 0.0) * downsample_levelx * ViewportWidth /
+                NativeWidth;
+
+    float2 dy = float2(0.0, NTSC_02.w) * downsample_levely * ViewportHeight /
+                NativeHeight;
+
     float2 d1 = dx + dy;
     float2 d2 = dx - dy;
+
     float sum = 15.0;
 
     float3 result = 3.0 * COMPAT_TEXTURE(NTSC_S06, coord).rgb +
@@ -2245,12 +2259,16 @@ float3 noise(float3 v)
     } else {
         v.z = mod(v.z, 6001.0) / 1753.0;
     }
+
     v = frac(v) + frac(v * 1e4) + frac(v * 1e-4);
+
     v += float3(0.12345, 0.6789, 0.314159);
+
     v = frac(v * dot(v, v) * 123.456);
     v = frac(v * dot(v, v) * 123.456);
     v = frac(v * dot(v, v) * 123.456);
     v = frac(v * dot(v, v) * 123.456);
+
     return v;
 }
 
@@ -2623,6 +2641,7 @@ float4 Signal_1_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
         float i_mod2 = cos(mod_phase2);
         float q_mod2 = sin(mod_phase2);
+
         yiq2.yz *= float2(i_mod2, q_mod2);
         yiq2 = mul(mix_m, yiq2);
         yiq2.yz *= float2(i_mod2, q_mod2);
@@ -2633,6 +2652,7 @@ float4 Signal_1_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
             i_mod2 = cos(mod_phase2);
             q_mod2 = sin(mod_phase2);
+
             yiqs.yz *= float2(i_mod2, q_mod2);
             yiq2.x = dot(yiqs, mix_m[0]);
         }
@@ -2723,8 +2743,9 @@ float4 Signal_2_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
     float res     = ntsc_scale;
     float3 signal = 0.0;
     float2 one    = 0.25 * OriginalSize.zz / res;
-    float phase   = (ntsc_phase == 0) ? ((NativeWidth > 300.0) ? 2.0 : 3.0)
-                                      : ((ntsc_phase > 1)      ? 3.0 : 2.0);
+
+    float phase = (ntsc_phase == 0) ? ((NativeWidth > 300.0) ? 2.0 : 3.0)
+                                    : ((ntsc_phase > 1)      ? 3.0 : 2.0);
 
     if (ntsc_phase == 3) {
         phase = 3.0;
@@ -2734,6 +2755,7 @@ float4 Signal_2_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
     float3 wsum  = 0.0.xxx;
     float3 sums  = wsum;
     float3 tmps  = wsum;
+
     float offset = 0.0;
     int i        = 0;
     float j      = 0.0;
@@ -2752,12 +2774,15 @@ float4 Signal_2_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
             offset = float(i - loopstart);
             j      = offset + 1.0;
             xd     = (offset - loop) * dx;
-            sums   = fetch_offset1(xd);
-            taps   = max(j - ssub, 0.0);
-            tmps   = float3(luma_filter_2_phase[i], taps.xx);
-            wsum   = wsum + tmps;
+
+            sums = fetch_offset1(xd);
+            taps = max(j - ssub, 0.0);
+            tmps = float3(luma_filter_2_phase[i], taps.xx);
+            wsum = wsum + tmps;
+
             signal += sums * tmps;
         }
+
         taps = laps - ssub;
         tmps = float3(luma_filter_2_phase[TAPS_2_phase], taps.xx);
         wsum = wsum + wsum + tmps;
@@ -2767,28 +2792,33 @@ float4 Signal_2_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
     } else {
         float loop = min(ntsc_taps, TAPS_3_phase);
-        one.y      = one.y / ntsc_cscale2;
-        float3 dx  = float3(one.x, one.y, 0.0);
-        float3 xd  = dx;
+
+        one.y = one.y / ntsc_cscale2;
+
+        float3 dx = float3(one.x, one.y, 0.0);
+        float3 xd = dx;
 
         int loopstart = int(24.0 - loop);
 
         for (i = loopstart; i < 24; i++) {
             offset = float(i - loopstart);
-            j      = offset + 1.0;
-            xd.xy  = (offset - loop) * dx.xy;
-            sums   = fetch_offset2(xd);
-            tmps   = float3(luma_filter_3_phase[i],
-                            chroma_filter_3_phase[i].xx);
 
-            wsum   = wsum + tmps;
+            j     = offset + 1.0;
+            xd.xy = (offset - loop) * dx.xy;
+
+            sums = fetch_offset2(xd);
+            tmps = float3(luma_filter_3_phase[i], chroma_filter_3_phase[i].xx);
+
+            wsum = wsum + tmps;
             signal += sums * tmps;
         }
+
         tmps = float3(luma_filter_3_phase[TAPS_3_phase],
                       chroma_filter_3_phase[TAPS_3_phase],
                       chroma_filter_3_phase[TAPS_3_phase]);
 
         wsum = wsum + wsum + tmps;
+
         signal += tex2D(NTSC_S03, tex_1).xyz * tmps;
         signal = signal / wsum;
     }
@@ -2809,8 +2839,9 @@ float4 Signal_2_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
                         ntsc_ring);
     }
 
-    float3 x   = rgb2yiq(tex2D(NTSC_S02, tex_1).rgb);
-    signal.x   = clamp(signal.x, -1.0, 1.0);
+    float3 x = rgb2yiq(tex2D(NTSC_S02, tex_1).rgb);
+    signal.x = clamp(signal.x, -1.0, 1.0);
+
     float3 rgb = signal;
 
     return float4(rgb, x.x);
@@ -2877,22 +2908,25 @@ float4 SharpnessPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 {
     float2 g01 = float2(-0.5 * OriginalSize.z, 0.0);
     float2 g21 = float2(0.5 * OriginalSize.z, 0.0);
+
     float3 c01 = tex2D(NTSC_S05, texcoord + g01).rgb;
     float3 c21 = tex2D(NTSC_S05, texcoord + g21).rgb;
     float3 c11 = tex2D(NTSC_S05, texcoord).rgb;
+
     float3 b11 = 0.5 * (c01 + c21);
 
     float contrast = max(max(c11.r, c11.g), c11.b);
     contrast       = lerp(2.0 * CCONTR, CCONTR, contrast);
 
-    float3 mn      = min(min(c01, c21), c11);
-    float3 mn1     = min(mn, c11 * (1.0 - contrast));
-    float3 mx      = max(max(c01, c21), c11);
-    float3 mx1     = max(mx, c11 * (1.0 + contrast));
-    float3 dif     = pow(mx1 - mn1 + 0.0001, 0.75);
+    float3 mn  = min(min(c01, c21), c11);
+    float3 mn1 = min(mn, c11 * (1.0 - contrast));
+    float3 mx  = max(max(c01, c21), c11);
+    float3 mx1 = max(mx, c11 * (1.0 + contrast));
+    float3 dif = pow(mx1 - mn1 + 0.0001, 0.75);
 
     float3 sharpen = lerp(CSHARPEN * CDETAILS, CSHARPEN, dif);
-    float3 res     = clamp(lerp(c11, b11, -sharpen), mn1, mx1);
+
+    float3 res = clamp(lerp(c11, b11, -sharpen), mn1, mx1);
 
     if (DEBLUR > 1.125) {
         c01 = tex2D(NTSC_S02, texcoord + 2.0 * g01).rgb;
@@ -2928,6 +2962,7 @@ float4 LuminancePS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
     float2 dx = float2(1.0 / NTSC_02.x, 0.0);
     float2 dy = float2(0.0, 1.0 / NTSC_02.y);
+
     float2 x2 = 2.0 * dx;
     float2 y2 = 2.0 * dy;
 
@@ -2947,6 +2982,7 @@ float4 LuminancePS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
     float3 l1 = COMPAT_TEXTURE(NTSC_S06, fuxcoord.xy).rgb;
     float3 r1 = COMPAT_TEXTURE(NTSC_S06, fuxcoord.xy + dx).rgb;
+
     float3 l2 = COMPAT_TEXTURE(NTSC_S06, fuxcoord.xy - dx).rgb;
     float3 r2 = COMPAT_TEXTURE(NTSC_S06, fuxcoord.xy + x2).rgb;
 
@@ -2971,10 +3007,12 @@ float4 LinearizePS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
     float intera   = 1.0;
     float gamma_in = clamp(gamma_i, 1.0, 5.0);
 
-    float m1  = max(max(c1.r, c1.g), c1.b);
-    float m2  = max(max(c2.r, c2.g), c2.b);
+    float m1 = max(max(c1.r, c1.g), c1.b);
+    float m2 = max(max(c2.r, c2.g), c2.b);
+
     float3 df = abs(c1 - c2);
-    float d   = max(max(df.r, df.g), df.b);
+
+    float d = max(max(df.r, df.g), df.b);
 
     if (interm == 2) {
         d = lerp(0.1 * d, 10.0 * d, step(m1 / (m2 + 0.0001), m2 / (m1 + 0.0001)));
@@ -3001,7 +3039,8 @@ float4 LinearizePS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
         if (interm < 4) {
             c2 = plant(lerp(c2, c2 * c2, iscans), max(max(c2.r, c2.g), c2.b));
             r  = clamp(max(m1 * ii, (1.0 - iscanb) * min(m1, m2)), 0.0, 1.0);
-            c  = plant(lerp(lerp(c1,
+
+            c = plant(lerp(lerp(c1,
                                 c2,
                                 min(lerp(m1, 1.0 - m2, min(m1, 1.0 - m1)) / (d + 0.00001),
                                     1.0)),
@@ -3068,6 +3107,7 @@ float4 HGaussianPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
         w = gauss_h(n + f);
         color = color + w * pixel;
         wsum = wsum + w;
+
         n = n + 1.0;
     } while (n <= SIZEH);
 
@@ -3101,6 +3141,7 @@ float4 VGaussianPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
         w = gauss_v(n + f);
         color = color + w * pixel;
         wsum = wsum + w;
+
         n = n + 1.0;
     } while (n <= SIZEV);
 
@@ -3132,10 +3173,13 @@ float4 BloomHorzPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
         pixel = COMPAT_TEXTURE(NTSC_S08, tex + n * dx);
 
         w = bloom_h(n + f);
+
         pixel.a = max(max(pixel.r, pixel.g), pixel.b);
         pixel.a *= pixel.a * pixel.a;
+
         color = color + w * pixel;
         wsum  = wsum + w;
+
         n = n + 1.0;
     } while (n <= SIZEX);
 
@@ -3197,21 +3241,24 @@ float4 NTSC_TV1_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
     float2 dx    = float2(PALSize.z, 0.0);
 
     float3 pixel;
-    float w          = 0.0;
-    float swsum      = 0.0;
-    float wsum       = 0.0;
-    float xs         = prescalex.x * 0.5;
+    float w     = 0.0;
+    float swsum = 0.0;
+    float wsum  = 0.0;
+    float xs    = prescalex.x * 0.5;
+
     float hsharpness = HSHARPNESS * xs;
 
-    float3 cmax      = 0.0.xxx;
-    float3 cmin      = 1.0.xxx;
-    float sharp      = crthd_h(hsharpness, xs) * S_SHARPH;
-    float maxsharp   = MAXS;
-    float FPR        = hsharpness;
-    float fpx        = 0.0;
-    float sp         = 0.0;
-    float sw         = 0.0;
-    float ts         = 0.025;
+    float3 cmax = 0.0.xxx;
+    float3 cmin = 1.0.xxx;
+
+    float sharp    = crthd_h(hsharpness, xs) * S_SHARPH;
+    float maxsharp = MAXS;
+
+    float FPR = hsharpness;
+    float fpx = 0.0;
+    float sp  = 0.0;
+    float sw  = 0.0;
+    float ts  = 0.025;
 
     float3 luma = float3(0.2126, 0.7152, 0.0722);
 
@@ -3239,7 +3286,8 @@ float4 NTSC_TV1_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
         sw     = max(w, 0.0) * (dot(pixel, luma) + ts);
         scolor = scolor + sw * sp;
         swsum  = swsum + sw;
-        n      = n + 1.0;
+
+        n = n + 1.0;
     } while (n <= LOOPSIZE);
 
     color  = color  / wsum;
@@ -3295,27 +3343,34 @@ float4 NTSC_TV2_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
     float factor = 1.0 + (1.0 - 0.5 * OS) * blm_2 / 100.0 - lum * blm_2 / 100.0;
 
     lexcoord = overscan(lexcoord, factor, factor);
-    lexcoord = overscan(lexcoord, (OriginalSize.x - overscanx * BufferToViewportRatio.x) / OriginalSize.x,
-                                  (OriginalSize.y - overscany * BufferToViewportRatio.y) / OriginalSize.y);
+    lexcoord = overscan(lexcoord,
+                        (OriginalSize.x - overscanx * BufferToViewportRatio.x) / OriginalSize.x,
+                        (OriginalSize.y - overscany * BufferToViewportRatio.y) / OriginalSize.y);
 
     float2 pos     = warp(lexcoord);
     float2 coffset = 0.5;
     float2 ps      = PALSize.zw;
     float2 OGL2Pos = pos * PALSize.xy - coffset;
     float2 fp      = frac(OGL2Pos);
-    float2 dx      = float2(ps.x, 0.0);
-    float2 dy      = float2(0.0, ps.y);
-    float f        = fp.y;
-    float2 pC4     = floor(OGL2Pos) * ps + 0.5 * ps;
-    pC4.x          = pos.x;
+
+    float2 dx = float2(ps.x, 0.0);
+    float2 dy = float2(0.0, ps.y);
+
+    float f = fp.y;
+
+    float2 pC4 = floor(OGL2Pos) * ps + 0.5 * ps;
+    pC4.x      = pos.x;
 
     if (intres == 0.5 && prescalex < 1.5) {
         pC4.y = floor(pC4.y * OriginalSize.y) * OriginalSize.w + 0.5 * OriginalSize.w;
     }
+
     if (interb && no_scanlines < 0.025 || hscans) {
         pC4.y = pos.y;
     } else if (interb) {
-        pC4.y = pC4.y + smoothstep(0.40 - 0.5 * no_scanlines, 0.60 + 0.5 * no_scanlines, f) * PALSize.w;
+        pC4.y = pC4.y +
+                smoothstep(0.40 - 0.5 * no_scanlines, 0.60 + 0.5 * no_scanlines, f) *
+                    PALSize.w;
     }
 
     float3 color1  = COMPAT_TEXTURE(NTSC_S09, pC4).rgb;
@@ -3361,13 +3416,15 @@ float4 NTSC_TV2_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
         float3 color0  = color1 * wt1 + color2 * wt2;
         float3 scolor0 = scolor1 * wt1 + scolor2 * wt2;
-        ctmp           = color0 / (wt1 + wt2);
-        float3 sctmp   = scolor0 / (wt1 + wt2);
+
+        ctmp         = color0 / (wt1 + wt2);
+        float3 sctmp = scolor0 / (wt1 + wt2);
 
         float3 w1, w2;
 
         float3 cref1 = lerp(sctmp, scolor1, beam_size);
         float creff1 = pow(max(max(cref1.r, cref1.g), cref1.b), scan_falloff);
+
         float3 cref2 = lerp(sctmp, scolor2, beam_size);
         float creff2 = pow(max(max(cref2.r, cref2.g), cref2.b), scan_falloff);
 
@@ -3378,6 +3435,7 @@ float4 NTSC_TV2_PS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
 
         float f1 = f;
         float f2 = 1.0 - f;
+
         float m1 = max(max(color1.r, color1.g), color1.b) + eps;
         float m2 = max(max(color2.r, color2.g), color2.b) + eps;
 
@@ -3464,8 +3522,9 @@ float4 ChromaticPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
     float factor = 1.0 + (1.0 - 0.5 * OS) * blm_2 / 100.0 - lum * blm_2 / 100.0;
 
     lexcoord = overscan(lexcoord, factor, factor);
-    lexcoord = overscan(lexcoord, (OriginalSize.x - overscanx * BufferToViewportRatio.x) / OriginalSize.x,
-                                  (OriginalSize.y - overscany * BufferToViewportRatio.y) / OriginalSize.y);
+    lexcoord = overscan(lexcoord,
+                        (OriginalSize.x - overscanx * BufferToViewportRatio.x) / OriginalSize.x,
+                        (OriginalSize.y - overscany * BufferToViewportRatio.y) / OriginalSize.y);
 
     float2 pos0 = warp(fuxcoord.xy);
     float2 pos1 = fuxcoord.xy;
@@ -3518,12 +3577,15 @@ float4 ChromaticPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
     float mask_compensate = frac(mwidth);
 
     if (shadow_mask > 0) {
-        float2 maskcoord  = fracoord.xy * 1.00001;
-        float2 scoord     = maskcoord;
-        mwidth            = floor(mwidth) * masksize;
-        float swidth      = mwidth;
-        bool zoomed       = (abs(mask_zoom) > 0.75);
-        float mscale      = 1.0;
+        float2 maskcoord = fracoord.xy * 1.00001;
+        float2 scoord    = maskcoord;
+
+        mwidth       = floor(mwidth) * masksize;
+        float swidth = mwidth;
+
+        bool zoomed  = (abs(mask_zoom) > 0.75);
+        float mscale = 1.0;
+
         float2 maskcoord0 = maskcoord;
         maskcoord.y       = floor(maskcoord.y / masksize);
         float mwidth1     = max(mwidth + mask_zoom, 2.0);
@@ -3535,7 +3597,8 @@ float4 ChromaticPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
             }
             float next_line = float(floor(mod(maskcoord.y, 2.0 * stagg_lvl)) <
                                     stagg_lvl);
-            maskcoord0.x    = maskcoord0.x + next_line * 0.5 * mwidth1;
+
+            maskcoord0.x = maskcoord0.x + next_line * 0.5 * mwidth1;
         }
 
         maskcoord = maskcoord0 / masksize;
@@ -3752,8 +3815,8 @@ float4 ChromaticPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
     float rc = 0.6 * sqrt(max(max(color.r, color.g), color.b)) + 0.4;
 
     if (abs(addnoised) > 0.01) {
-        float3 noise0 = noise(float3(floor(OutputSize.xy * fuxcoord / noiseresd),
-                                     FrameCount));
+        float3 noise0 = noise(
+            float3(floor(OutputSize.xy * fuxcoord / noiseresd), FrameCount));
         if (noisetype == 0) {
             color = lerp(color, noise0, 0.25 * abs(addnoised) * rc);
         } else {
@@ -3767,9 +3830,10 @@ float4 ChromaticPS(float4 position : SV_Position, float2 texcoord : TEXCOORD) : 
                                  min(20.0 * colmx, 1.0));
 
     return float4(color * vig * humbars(lerp(pos.y, pos.x, bardir)) * post_br *
-                          corner((pos0 - 0.5) * BufferToViewportRatio + 0.5),
+                      corner((pos0 - 0.5) * BufferToViewportRatio + 0.5),
                   1.0);
 }
+
 
 technique CRT_Guest_NTSC
 {
